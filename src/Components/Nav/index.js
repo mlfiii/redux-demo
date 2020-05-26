@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import NavLink from '../NavLink'
 
 import { navlinks } from './utils'
@@ -11,14 +11,11 @@ const Nav = ({ location: { pathname } = {} }) => (
         Demo
       </Link>
       <ul className='right'>
-        {navlinks.map(({ link, text }, idx) => (
-          <NavLink key={idx} link={link} pathname={pathname}>
-            {text}
-          </NavLink>
-        ))}
+        <li>hello</li>
       </ul>
     </div>
   </nav>
 )
 
-export default withRouter(Nav)
+// TODO: use withRouter HOC to have access to router without declaring it
+export default Nav

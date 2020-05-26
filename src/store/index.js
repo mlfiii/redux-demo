@@ -1,10 +1,5 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux'
-import thunk from 'redux-thunk'
-import Animal from './Animal'
-import Immutable from './Immutable'
-import User from './User'
+// TODO: bring in all imports
 
-const reducers = combineReducers({ Animal, Immutable, User })
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+// TODO: combine reducers, create store with middleware, apply middleware and thunks (later on)
 
-export default initialState => createStoreWithMiddleware(reducers, initialState)
+// TODO: export default store with initialstate

@@ -1,24 +1,16 @@
+// TODO: import data fetching library
 import axios from 'axios'
 
+// TODO: define 3 RSAA types (cases)
 const GET_DOG_REQUEST = 'animals/GET_DOG_REQUEST'
 const GET_DOG_SUCCESS = 'animals/GET_DOG_SUCCESS'
 const GET_DOG_ERROR = 'animals/GET_DOG_ERROR'
 
-export const getDogImage = () => dispatch => {
-  dispatch({ type: GET_DOG_REQUEST, payload: { busy: true } })
-  const request = axios.get('https://api.thedogapi.com/v1/images/search')
+// TODO: define thunk
+export const getDogImage = () => dispatch => {}
 
-  return request.then(
-    response => dispatch(getDogImageSuccess(response)),
-    err =>
-      dispatch({ type: GET_DOG_ERROR, payload: { busy: false, error: err } })
-  )
-}
-
-const getDogImageSuccess = ({ data }) => ({
-  type: GET_DOG_SUCCESS,
-  payload: { busy: false, dogBreed: data[0].breeds[0], dogImage: data[0].url },
-})
+// TODO: define success action creator
+const getDogImageSuccess = ({ data }) => ({})
 
 const initialState = {
   busy: false,

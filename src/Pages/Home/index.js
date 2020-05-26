@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
+// TODO: import connect from react-redux
+
 import Button from '../../Components/Button'
-import { addUser, getUsers } from '../../store/User'
+// TODO: import action creators
 
 import { Heading } from './styles'
 
-const mapStateToProps = ({ User }) => ({
-  users: User.users,
-})
+// TODO: map state to props
 
 const Demo = ({ dispatch, users }) => {
   const [username, setUsername] = useState('')
@@ -20,7 +19,7 @@ const Demo = ({ dispatch, users }) => {
   const handleAddNewUser = event => {
     event.preventDefault()
 
-    dispatch(addUser(username))
+    // TODO: dispatch action creator
     setUsername('')
   }
 
@@ -28,7 +27,8 @@ const Demo = ({ dispatch, users }) => {
     <div>
       <Heading>
         <h3>Simple redux example</h3>
-        <Button handler={() => dispatch(getUsers())}>Get initial users</Button>
+
+        <Button handler={() => {}}>Get initial users</Button>
       </Heading>
       <div>
         <form onSubmit={handleAddNewUser}>
@@ -41,15 +41,11 @@ const Demo = ({ dispatch, users }) => {
           <Button type='submit'>Add User</Button>
         </form>
       </div>
-      {!!users.length && (
-        <ul>
-          {users.map(user => (
-            <li key={user.id}>{user.name}</li>
-          ))}
-        </ul>
-      )}
+      {/* 
+        loop through users
+      */}
     </div>
   )
 }
 
-export default connect(mapStateToProps)(Demo)
+export default Demo

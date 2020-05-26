@@ -7,12 +7,8 @@ import Button from '../../Components/Button'
 import Card from '../../Components/Card'
 import { ImgContainer, UserContainer } from './styles'
 
-const mapStateToProps = ({ Immutable }) => ({
-  immutable: Immutable,
-  // name: Immutable.getIn(['entity', 'name'], ''),
-  alexLikesMetal: Immutable.getIn(['entity', 'hobbies', 'metal'], false),
-  users: Immutable.getIn(['entities'], OrderedMap()).toList(),
-})
+// TODO: map state to props with immutable
+const mapStateToProps = ({ Immutable }) => ({})
 
 const Immutable = ({ alexLikesMetal, dispatch, users }) => (
   <React.Fragment>
@@ -30,13 +26,9 @@ const Immutable = ({ alexLikesMetal, dispatch, users }) => (
       </ImgContainer>
     )}
     <UserContainer>
-      {!!users.size &&
-        users.map(user => (
-          <Card title={user.get('name')} key={user.get('id')}>
-            <p>{`Likes baking: ${user.getIn(['hobbies', 'baking'])}`}</p>
-            <p>{`Likes metal: ${user.getIn(['hobbies', 'metal'])}`}</p>
-          </Card>
-        ))}
+      {/* 
+      map through users with immutable
+    */}
     </UserContainer>
   </React.Fragment>
 )

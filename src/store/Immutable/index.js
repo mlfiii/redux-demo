@@ -1,7 +1,6 @@
-import * as R from 'ramda'
 import { v4 as uuid } from 'uuid'
-import { fromJS, Map, OrderedMap } from 'immutable'
-import { objFromListWith } from '../utils'
+
+// TODO: import immutable, ramda and util function for arrays
 
 const SET_IMMUTABLE_MAP = 'immutable/GET_IMMUTABLE_MAP'
 const SET_IMMUTABLE_ORDERD_MAP = 'immutable/GET_IMMUTABLE_ORDERD_MAP'
@@ -23,21 +22,12 @@ export const setImmutableOrderdMap = () => {
   }
 }
 
-const initialState = fromJS({
-  entity: Map(),
-  entities: OrderedMap(),
-})
+// TODO: create immutable inital state
 
-export default function reducer(state = initialState, { payload, type }) {
-  switch (type) {
-    case SET_IMMUTABLE_MAP:
-      return state.set('entity', fromJS(payload))
-    case SET_IMMUTABLE_ORDERD_MAP:
-      return state.set(
-        'entities',
-        fromJS(objFromListWith(R.prop('id'), payload))
-      )
-    default:
-      return state
-  }
-}
+// export default function reducer(state = initialState, { payload, type }) {
+//   switch (type) {
+// TODO: return state with set or setIn
+//     default:
+//       return state
+//   }
+// }

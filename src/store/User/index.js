@@ -1,31 +1,14 @@
+// TODO: import uuid package
 import { v4 as uuid } from 'uuid'
 
-const GET_USERS = 'user/GET_USER'
-const ADD_USER = 'user/ADD_USER'
+// TODO: define types
 
-export const getUsers = () => {
-  return {
-    type: GET_USERS,
-    payload: [{ id: uuid(), name: 'Alex' }],
-  }
-}
+// TODO: define action creators
+export const getUsers = () => {}
 
-export const addUser = username => ({
-  type: ADD_USER,
-  payload: { id: uuid(), name: username },
-})
+export const addUser = username => ({})
 
-const initialState = {
-  users: [],
-}
+// TODO: define initial state
+const initialState = {}
 
-export default function reducer(state = initialState, { payload, type }) {
-  switch (type) {
-    case GET_USERS:
-      return { ...state, users: payload }
-    case ADD_USER:
-      return { users: [...state.users, payload] }
-    default:
-      return state
-  }
-}
+// TODO: export default reducer with type switchcase
